@@ -49,6 +49,14 @@
             this.dateTimengaysinh = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoHieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapBac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +106,7 @@
             this.txtchucvu.Location = new System.Drawing.Point(475, 89);
             this.txtchucvu.Name = "txtchucvu";
             this.txtchucvu.Size = new System.Drawing.Size(246, 20);
-            this.txtchucvu.TabIndex = 4;
+            this.txtchucvu.TabIndex = 5;
             // 
             // txtcapbac
             // 
@@ -112,7 +120,7 @@
             this.txthovaten.Location = new System.Drawing.Point(109, 60);
             this.txthovaten.Name = "txthovaten";
             this.txthovaten.Size = new System.Drawing.Size(246, 20);
-            this.txthovaten.TabIndex = 1;
+            this.txthovaten.TabIndex = 2;
             // 
             // label7
             // 
@@ -214,17 +222,29 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.SoHieu,
+            this.HoTen,
+            this.GioiTinh,
+            this.NgaySinh,
+            this.ChucVu,
+            this.CapBac,
+            this.Xoa});
             this.dataGridView1.Location = new System.Drawing.Point(0, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(789, 150);
             this.dataGridView1.TabIndex = 51;
+            this.dataGridView1.AllowUserToAddRowsChanged += new System.EventHandler(this.dataGridView1_AllowUserToAddRowsChanged);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // dateTimengaysinh
             // 
+            this.dateTimengaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimengaysinh.Location = new System.Drawing.Point(109, 86);
             this.dateTimengaysinh.Name = "dateTimengaysinh";
             this.dateTimengaysinh.Size = new System.Drawing.Size(246, 20);
-            this.dateTimengaysinh.TabIndex = 52;
+            this.dateTimengaysinh.TabIndex = 4;
             this.dateTimengaysinh.Value = new System.DateTime(2000, 1, 1, 16, 6, 0, 0);
             // 
             // label2
@@ -238,6 +258,9 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "Nam",
+            "Nữ"});
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Nam",
@@ -245,7 +268,59 @@
             this.comboBox1.Location = new System.Drawing.Point(475, 37);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 53;
+            this.comboBox1.TabIndex = 1;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "STT";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // SoHieu
+            // 
+            this.SoHieu.DataPropertyName = "SoHieu";
+            this.SoHieu.HeaderText = "Mã Cán Bộ";
+            this.SoHieu.Name = "SoHieu";
+            this.SoHieu.ReadOnly = true;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.DataPropertyName = "ChucVu";
+            this.ChucVu.HeaderText = "Chức vụ";
+            this.ChucVu.Name = "ChucVu";
+            // 
+            // CapBac
+            // 
+            this.CapBac.DataPropertyName = "Capbac";
+            this.CapBac.HeaderText = "Cấp bậc";
+            this.CapBac.Name = "CapBac";
+            // 
+            // Xoa
+            // 
+            this.Xoa.DataPropertyName = "Xoa";
+            this.Xoa.HeaderText = "Xoa";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Visible = false;
             // 
             // CanBo
             // 
@@ -300,5 +375,13 @@
         private System.Windows.Forms.DateTimePicker dateTimengaysinh;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoHieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CapBac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Xoa;
     }
 }
