@@ -64,6 +64,19 @@ namespace BusinessLogic
         {
             da.ExecuteNonQuery(sql);
         }
+        public DataTable get_Table(string sql)
+        {
+            return da.getTable(sql);
+        }
 
+        public void ExecuteNonQuery(string sql)
+        {
+            da.getNon(sql);
+        }
+        public void Them_Canbo(string s1, string s2, string s3, string s4, string s5, string s6)
+        {
+            string sql = string.Format("insert into CanBo values (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}')", s1, s2, s3, s4, s5,s6);
+            da.getNon(sql);
+        }
     }
 }

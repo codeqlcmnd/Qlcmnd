@@ -109,17 +109,6 @@ namespace QLCMND
 
         private void ThemCanbo_Click(object sender, EventArgs e)
         {
-            TaiKhoan frm = new TaiKhoan();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                TaiKhoan TaiKhoan_OP = new TaiKhoan();
-                TaiKhoan_OP.MdiParent = this;
-                TaiKhoan_OP.Show();
-            }
-        }
-
-        private void ThemTaiKhoan_Click(object sender, EventArgs e)
-        {
             CanBo frm = new CanBo();
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -129,5 +118,24 @@ namespace QLCMND
             }
         }
 
+        private void ThemTaiKhoan_Click(object sender, EventArgs e)
+        {
+            
+            TaiKhoan frm = new TaiKhoan();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                TaiKhoan TaiKhoan_OP = new TaiKhoan();
+                TaiKhoan_OP.MdiParent = this;
+                TaiKhoan_OP.Show();
+            }
+        }
+
+        private void Ketthuc_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.OK == MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+            {
+                Close();
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace DataAccess
     {
         public SqlConnection getConnect()
         {
-            return new SqlConnection(@"Data Source=desktop-etieo8q\sqlexpress;Initial Catalog=QLCMND;Integrated Security=True");
+            return new SqlConnection(@"Data Source=127.0.0.1\sqlexpress;Initial Catalog=QLCMND;Integrated Security=True");
         }
 
         public DataTable getDataTable(string sql)
@@ -31,6 +31,23 @@ namespace DataAccess
             cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             cmd.Dispose();
+        }
+        public DataTable getTable(string sql)
+        {
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, getConnect());
+            adapter.Fill(table);
+            return table;
+        }
+
+        public void getNon(string sql)
+        {
+            SqlConnection connect = getConnect();
+            connect.Open();
+            SqlCommand cmd = new SqlCommand(sql, connect);
+            int trave = cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            connect.Close();
         }
     }
 }

@@ -113,20 +113,21 @@
             // DoiMK
             // 
             this.DoiMK.Name = "DoiMK";
-            this.DoiMK.Size = new System.Drawing.Size(145, 22);
+            this.DoiMK.Size = new System.Drawing.Size(152, 22);
             this.DoiMK.Text = "Đổi mật khẩu";
             // 
             // SaoLuuCSDL
             // 
             this.SaoLuuCSDL.Name = "SaoLuuCSDL";
-            this.SaoLuuCSDL.Size = new System.Drawing.Size(145, 22);
+            this.SaoLuuCSDL.Size = new System.Drawing.Size(152, 22);
             this.SaoLuuCSDL.Text = "Sao lưu CSDL";
             // 
             // Ketthuc
             // 
             this.Ketthuc.Name = "Ketthuc";
-            this.Ketthuc.Size = new System.Drawing.Size(145, 22);
+            this.Ketthuc.Size = new System.Drawing.Size(152, 22);
             this.Ketthuc.Text = "Kết thúc";
+            this.Ketthuc.Click += new System.EventHandler(this.Ketthuc_Click);
             // 
             // MenuCMND
             // 
@@ -453,20 +454,22 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(857, 334);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(857, 340);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(191, 349);
+            this.label1.Location = new System.Drawing.Point(194, 374);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(517, 25);
             this.label1.TabIndex = 14;

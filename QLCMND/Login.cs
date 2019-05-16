@@ -20,15 +20,17 @@ namespace QLCMND
         {
             String username = txtUsername.Text.ToString();
             String password = txtPassword.Text.ToString();
-            String sql = "Select * from Taikhoan where Taikhoan = '" + username + "' and Matkhau = '" + password + "' and Xoa =0";
-            DataGridView datag = new DataGridView();
+            String sql = "Select * from Taikhoan where Taikhoan = '" + username.Trim() + "' and Matkhau = '" + password.Trim() + "' and Xoa =0";
             DataTable dt = new DataTable();
-            dt = BLL.Datatable_SQL(sql);
-            datag.DataSource = dt;
-            if (Int32.Parse(datag.RowCount.ToString()) > 0)
+            dt = BLL.get_Table(sql);
+            if (Int32.Parse(dt.Rows.Count.ToString()) > 0)
             {
+                Flash Flash = new Flash();
+                Flash.ShowDialog();
+                this.Hide();
                 Main Main = new Main();
                 Main.Show();
+                
             }
             else
             {
@@ -41,6 +43,11 @@ namespace QLCMND
         {
             txtUsername.ResetText();
             txtPassword.ResetText();
+        }
+
+        private void btnOk_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
