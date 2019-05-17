@@ -15,7 +15,7 @@ namespace QLCMND
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CanBo());
+            Application.Run(new TaiKhoan());
         }
     }
 }

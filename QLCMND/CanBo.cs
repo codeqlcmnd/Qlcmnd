@@ -12,7 +12,7 @@ namespace QLCMND
 {
     public partial class CanBo : Form
     {
-        FingerprintData Bll = new FingerprintData();
+        Business Bll = new Business();
         public CanBo()
         {
             InitializeComponent();

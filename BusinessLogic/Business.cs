@@ -9,7 +9,7 @@ using System.Data;
 
 namespace BusinessLogic
 {
-    public class FingerprintData
+    public class Business
     {
         Data da = new Data();
         
@@ -82,6 +82,17 @@ namespace BusinessLogic
         {
             int id = Int32.Parse(s7);
             string sql = string.Format("Update CanBo set sohieu = N'{0}',hoten =N'{1}',ngaysinh =N'{2}',gioitinh =N'{3}',capbac =N'{4}',chucvu =N'{5}' where ID = '{6}'", s1, s2, s3, s4, s5, s6,s7);
+            da.getNon(sql);
+        }
+        public void Them_Taikhoan(int s1, string s2, string s3, string s4)
+        {
+            string sql = string.Format("insert into TaiKhoan(macanbo,taikhoan,matkhau,quyen) values('{0}', N'{1}', N'{2}', N'{3}')", s1, s2, s3, s4);
+            da.getNon(sql);
+        }
+        public void Sua_Taikhoan(int s1, string s2, string s3, string s4, string s5)
+        {
+            int id = Int32.Parse(s5);
+            string sql = string.Format("Update TaiKhoan set macanbo = '{0}',taikhoan =N'{1}',matkhau =N'{2}',quyen =N'{3}' where ID = '{4}'", s1, s2, s3, s4, s5);
             da.getNon(sql);
         }
         public int Dem_Canbo(string s1)

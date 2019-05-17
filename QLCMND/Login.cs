@@ -15,7 +15,7 @@ namespace QLCMND
         {
             InitializeComponent();
         }
-        FingerprintData BLL = new FingerprintData();
+        Business BLL = new Business();
         private void btnOk_Click(object sender, EventArgs e)
         {
             String username = txtUsername.Text.ToString();
