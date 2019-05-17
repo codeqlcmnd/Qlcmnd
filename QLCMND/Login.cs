@@ -29,6 +29,7 @@ namespace QLCMND
                 Flash.ShowDialog();
                 this.Hide();
                 Main Main = new Main();
+                Main.idlogin = Int32.Parse(dt.Rows[0]["ID"].ToString());
                 Main.Show();
                 
             }

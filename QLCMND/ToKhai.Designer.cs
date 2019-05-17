@@ -77,8 +77,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNguyenQuan = new System.Windows.Forms.TextBox();
+            this.txtDKHKTT = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -181,7 +181,7 @@
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(76, 13);
             this.label36.TabIndex = 257;
-            this.label36.Text = "Nơi ĐK KHTT:";
+            this.label36.Text = "Nơi ĐK HKTT:";
             // 
             // txtNoiSinh
             // 
@@ -487,6 +487,7 @@
             this.btnBoQua.TabIndex = 1;
             this.btnBoQua.Text = "&Bỏ qua";
             this.btnBoQua.UseVisualStyleBackColor = true;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // btnChapNhan
             // 
@@ -496,6 +497,7 @@
             this.btnChapNhan.TabIndex = 0;
             this.btnChapNhan.Text = "Thêm";
             this.btnChapNhan.UseVisualStyleBackColor = true;
+            this.btnChapNhan.Click += new System.EventHandler(this.btnChapNhan_Click);
             // 
             // label6
             // 
@@ -523,20 +525,21 @@
             this.button2.TabIndex = 269;
             this.button2.Text = "Chọn ảnh";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // txtNguyenQuan
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(398, 20);
-            this.textBox1.TabIndex = 24;
+            this.txtNguyenQuan.Location = new System.Drawing.Point(117, 151);
+            this.txtNguyenQuan.Name = "txtNguyenQuan";
+            this.txtNguyenQuan.Size = new System.Drawing.Size(398, 20);
+            this.txtNguyenQuan.TabIndex = 24;
             // 
-            // textBox2
+            // txtDKHKTT
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(399, 20);
-            this.textBox2.TabIndex = 25;
+            this.txtDKHKTT.Location = new System.Drawing.Point(116, 176);
+            this.txtDKHKTT.Name = "txtDKHKTT";
+            this.txtDKHKTT.Size = new System.Drawing.Size(399, 20);
+            this.txtDKHKTT.TabIndex = 25;
             // 
             // pictureBox1
             // 
@@ -553,8 +556,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 523);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDKHKTT);
+            this.Controls.Add(this.txtNguyenQuan);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSoCMNDCu);
@@ -662,8 +665,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNguyenQuan;
+        private System.Windows.Forms.TextBox txtDKHKTT;
 
     }
 }

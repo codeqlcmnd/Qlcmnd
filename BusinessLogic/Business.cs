@@ -95,6 +95,41 @@ namespace BusinessLogic
             string sql = string.Format("Update TaiKhoan set macanbo = '{0}',taikhoan =N'{1}',matkhau =N'{2}',quyen =N'{3}' where ID = '{4}'", s1, s2, s3, s4, s5);
             da.getNon(sql);
         }
+        public void Them_ToKhai(string[] ToKhaiInfo)
+        {
+            string SoCMND = ToKhaiInfo[0];
+            string HoVaTen = ToKhaiInfo[1];
+            string GioiTinh = ToKhaiInfo[2];
+            string TenGoiKhac = ToKhaiInfo[3];
+            string NgaySinh = ToKhaiInfo[4];
+            string NoiSinh = ToKhaiInfo[5];
+            string NguyenQuan = ToKhaiInfo[6];
+            string DKHKTT = ToKhaiInfo[7];
+            string NgheNghiep = ToKhaiInfo[8];
+            string DanToc = ToKhaiInfo[9];
+            string TonGiao = ToKhaiInfo[10];
+            string TrinhDo = ToKhaiInfo[11];
+            string HoVaTenCha = ToKhaiInfo[12];
+            string HoVaTenMe = ToKhaiInfo[13];
+            string HoVaTenVoChong = ToKhaiInfo[14];
+            string DauVetRieng = ToKhaiInfo[15];
+            string SoCMNDCu = ToKhaiInfo[16];
+            string NgayCapCu = ToKhaiInfo[17];
+            string NoiCapCu = ToKhaiInfo[18];
+            string LyDo = ToKhaiInfo[19];
+            string UrlAnh = ToKhaiInfo[20];
+            string CanBoKhai = ToKhaiInfo[21];
+            
+            string sql = "Insert Into ToKhai (SoCMND,HoVaTen,GioiTinh,TenGoiKhac,NgaySinh,NoiSinh,NguyenQuan,HoKhauThuongTru,NgheNghiep,DanToc,TonGiao,TrinhDo,HoTenCha,HoTenMe,HoTenVoChong,SoCMNDCu,NgayCapCu,NoiCap,DauVetRieng,NgayKhai,LyDo, CanBoNhan, AnhCM) " +
+                         "Values ('" + SoCMND + "',N'" + HoVaTen + "',N'" + GioiTinh + "',N'" + TenGoiKhac + "','" + NgaySinh + "',N'" + NoiSinh + "',N'" + NguyenQuan + "','N'" + DKHKTT + "',N'" + NgheNghiep + "',N'" + DanToc + "',N'" + TonGiao + "',N'" + TrinhDo + "',N'" + HoVaTenCha + "',N'" + HoVaTenMe + "',N'" + HoVaTenVoChong + "',N'" + SoCMNDCu + "',N'" + NgayCapCu + "',N'" + NoiCapCu + "',N'" + DauVetRieng + "','" + DateTime.Today.ToShortDateString() + "','" + LyDo + "','" + CanBoKhai + "','" + UrlAnh + "')";
+           da.getNon(sql);
+        }
+        public void Sua_ToKhai(string s1, string s2, string s3, string s4, string s5, string s6, string s7)
+        {
+            int id = Int32.Parse(s7);
+            string sql = string.Format("Update CanBo set sohieu = N'{0}',hoten =N'{1}',ngaysinh =N'{2}',gioitinh =N'{3}',capbac =N'{4}',chucvu =N'{5}' where ID = '{6}'", s1, s2, s3, s4, s5, s6, s7);
+            da.getNon(sql);
+        }
         public int Dem_Canbo(string s1)
         {
             string sql;

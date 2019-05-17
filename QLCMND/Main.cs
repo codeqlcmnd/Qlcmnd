@@ -16,6 +16,8 @@ namespace QLCMND
             InitializeComponent();
         }
 
+        public int idlogin = 0;
+
         private void Main_Load(object sender, EventArgs e)
         {
 
