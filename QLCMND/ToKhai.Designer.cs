@@ -32,8 +32,6 @@
             this.txtSoCMNDCu = new System.Windows.Forms.MaskedTextBox();
             this.txtLyDo = new System.Windows.Forms.TextBox();
             this.lab_LyDoCapDoi = new System.Windows.Forms.Label();
-            this.rad_CapDoi = new System.Windows.Forms.RadioButton();
-            this.rad_CapMoi = new System.Windows.Forms.RadioButton();
             this.txtSoCMND = new System.Windows.Forms.MaskedTextBox();
             this.txtTrinhDo = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -46,7 +44,6 @@
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtNoiCap = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.txtNgayCap = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.txtTenVoChong = new System.Windows.Forms.TextBox();
@@ -60,7 +57,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.cboTonGiao = new System.Windows.Forms.ComboBox();
             this.cboDanToc = new System.Windows.Forms.ComboBox();
-            this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,7 +68,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnKetThuc = new System.Windows.Forms.Button();
-            this.btnBoQua = new System.Windows.Forms.Button();
             this.btnChapNhan = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -80,6 +75,10 @@
             this.txtNguyenQuan = new System.Windows.Forms.TextBox();
             this.txtDKHKTT = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.txtNgayCap = new System.Windows.Forms.DateTimePicker();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.BtnVanTay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -112,39 +111,17 @@
             this.lab_LyDoCapDoi.TabIndex = 260;
             this.lab_LyDoCapDoi.Text = "Lý do cấp lại:";
             // 
-            // rad_CapDoi
-            // 
-            this.rad_CapDoi.AutoSize = true;
-            this.rad_CapDoi.Location = new System.Drawing.Point(101, 53);
-            this.rad_CapDoi.Name = "rad_CapDoi";
-            this.rad_CapDoi.Size = new System.Drawing.Size(57, 17);
-            this.rad_CapDoi.TabIndex = 211;
-            this.rad_CapDoi.TabStop = true;
-            this.rad_CapDoi.Text = "&Cấp lại";
-            this.rad_CapDoi.UseVisualStyleBackColor = true;
-            // 
-            // rad_CapMoi
-            // 
-            this.rad_CapMoi.AutoSize = true;
-            this.rad_CapMoi.Checked = true;
-            this.rad_CapMoi.Location = new System.Drawing.Point(21, 53);
-            this.rad_CapMoi.Name = "rad_CapMoi";
-            this.rad_CapMoi.Size = new System.Drawing.Size(63, 17);
-            this.rad_CapMoi.TabIndex = 210;
-            this.rad_CapMoi.TabStop = true;
-            this.rad_CapMoi.Text = "Cấp &mới";
-            this.rad_CapMoi.UseVisualStyleBackColor = true;
-            // 
             // txtSoCMND
             // 
             this.txtSoCMND.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtSoCMND.Location = new System.Drawing.Point(349, 51);
+            this.txtSoCMND.Location = new System.Drawing.Point(117, 49);
             this.txtSoCMND.Mask = "000000000";
             this.txtSoCMND.Name = "txtSoCMND";
             this.txtSoCMND.RejectInputOnFirstFailure = true;
             this.txtSoCMND.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSoCMND.Size = new System.Drawing.Size(85, 20);
             this.txtSoCMND.TabIndex = 18;
+            this.txtSoCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoCMND_KeyPress);
             // 
             // txtTrinhDo
             // 
@@ -231,7 +208,7 @@
             // 
             this.txtNoiCap.Location = new System.Drawing.Point(117, 383);
             this.txtNoiCap.Name = "txtNoiCap";
-            this.txtNoiCap.Size = new System.Drawing.Size(259, 20);
+            this.txtNoiCap.Size = new System.Drawing.Size(276, 20);
             this.txtNoiCap.TabIndex = 36;
             // 
             // label31
@@ -242,14 +219,6 @@
             this.label31.Size = new System.Drawing.Size(47, 13);
             this.label31.TabIndex = 252;
             this.label31.Text = "Nơi cấp:";
-            // 
-            // txtNgayCap
-            // 
-            this.txtNgayCap.Location = new System.Drawing.Point(275, 357);
-            this.txtNgayCap.MaxLength = 10;
-            this.txtNgayCap.Name = "txtNgayCap";
-            this.txtNgayCap.Size = new System.Drawing.Size(100, 20);
-            this.txtNgayCap.TabIndex = 35;
             // 
             // label30
             // 
@@ -289,7 +258,7 @@
             // 
             this.txtDauVetRieng.Location = new System.Drawing.Point(117, 332);
             this.txtDauVetRieng.Name = "txtDauVetRieng";
-            this.txtDauVetRieng.Size = new System.Drawing.Size(258, 20);
+            this.txtDauVetRieng.Size = new System.Drawing.Size(276, 20);
             this.txtDauVetRieng.TabIndex = 33;
             // 
             // txtTenMe
@@ -370,14 +339,6 @@
             this.cboDanToc.Size = new System.Drawing.Size(94, 21);
             this.cboDanToc.TabIndex = 27;
             // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Location = new System.Drawing.Point(349, 99);
-            this.txtNgaySinh.MaxLength = 10;
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(100, 20);
-            this.txtNgaySinh.TabIndex = 22;
-            // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(117, 75);
@@ -442,7 +403,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 55);
+            this.label2.Location = new System.Drawing.Point(50, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 238;
@@ -460,8 +421,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.BtnVanTay);
+            this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnKetThuc);
-            this.panel1.Controls.Add(this.btnBoQua);
             this.panel1.Controls.Add(this.btnChapNhan);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -472,26 +434,17 @@
             // 
             // btnKetThuc
             // 
-            this.btnKetThuc.Location = new System.Drawing.Point(472, 11);
+            this.btnKetThuc.Location = new System.Drawing.Point(427, 11);
             this.btnKetThuc.Name = "btnKetThuc";
             this.btnKetThuc.Size = new System.Drawing.Size(86, 25);
             this.btnKetThuc.TabIndex = 2;
             this.btnKetThuc.Text = "&Kết thúc";
             this.btnKetThuc.UseVisualStyleBackColor = true;
-            // 
-            // btnBoQua
-            // 
-            this.btnBoQua.Location = new System.Drawing.Point(275, 13);
-            this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(86, 25);
-            this.btnBoQua.TabIndex = 1;
-            this.btnBoQua.Text = "&Bỏ qua";
-            this.btnBoQua.UseVisualStyleBackColor = true;
-            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
+            this.btnKetThuc.Click += new System.EventHandler(this.btnKetThuc_Click);
             // 
             // btnChapNhan
             // 
-            this.btnChapNhan.Location = new System.Drawing.Point(101, 11);
+            this.btnChapNhan.Location = new System.Drawing.Point(85, 12);
             this.btnChapNhan.Name = "btnChapNhan";
             this.btnChapNhan.Size = new System.Drawing.Size(86, 25);
             this.btnChapNhan.TabIndex = 0;
@@ -551,11 +504,50 @@
             this.pictureBox1.TabIndex = 268;
             this.pictureBox1.TabStop = false;
             // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtNgaySinh.Location = new System.Drawing.Point(349, 98);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(85, 20);
+            this.txtNgaySinh.TabIndex = 270;
+            // 
+            // txtNgayCap
+            // 
+            this.txtNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtNgayCap.Location = new System.Drawing.Point(275, 360);
+            this.txtNgayCap.Name = "txtNgayCap";
+            this.txtNgayCap.Size = new System.Drawing.Size(118, 20);
+            this.txtNgayCap.TabIndex = 270;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(259, 13);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 16;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Visible = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // BtnVanTay
+            // 
+            this.BtnVanTay.Location = new System.Drawing.Point(567, 14);
+            this.BtnVanTay.Name = "BtnVanTay";
+            this.BtnVanTay.Size = new System.Drawing.Size(75, 23);
+            this.BtnVanTay.TabIndex = 16;
+            this.BtnVanTay.Text = "Vân Tay";
+            this.BtnVanTay.UseVisualStyleBackColor = true;
+            this.BtnVanTay.Visible = false;
+            // 
             // ToKhai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 523);
+            this.Controls.Add(this.txtNgayCap);
+            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtDKHKTT);
             this.Controls.Add(this.txtNguyenQuan);
             this.Controls.Add(this.button2);
@@ -563,8 +555,6 @@
             this.Controls.Add(this.txtSoCMNDCu);
             this.Controls.Add(this.txtLyDo);
             this.Controls.Add(this.lab_LyDoCapDoi);
-            this.Controls.Add(this.rad_CapDoi);
-            this.Controls.Add(this.rad_CapMoi);
             this.Controls.Add(this.txtSoCMND);
             this.Controls.Add(this.txtTrinhDo);
             this.Controls.Add(this.label14);
@@ -577,7 +567,6 @@
             this.Controls.Add(this.cboGioiTinh);
             this.Controls.Add(this.txtNoiCap);
             this.Controls.Add(this.label31);
-            this.Controls.Add(this.txtNgayCap);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.txtTenVoChong);
@@ -591,7 +580,6 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.cboTonGiao);
             this.Controls.Add(this.cboDanToc);
-            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -607,6 +595,7 @@
             this.Name = "ToKhai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tờ khai CMND";
+            this.Load += new System.EventHandler(this.ToKhai_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -619,8 +608,6 @@
         private System.Windows.Forms.MaskedTextBox txtSoCMNDCu;
         private System.Windows.Forms.TextBox txtLyDo;
         private System.Windows.Forms.Label lab_LyDoCapDoi;
-        private System.Windows.Forms.RadioButton rad_CapDoi;
-        private System.Windows.Forms.RadioButton rad_CapMoi;
         private System.Windows.Forms.MaskedTextBox txtSoCMND;
         private System.Windows.Forms.TextBox txtTrinhDo;
         private System.Windows.Forms.Label label14;
@@ -633,7 +620,6 @@
         private System.Windows.Forms.ComboBox cboGioiTinh;
         private System.Windows.Forms.TextBox txtNoiCap;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox txtNgayCap;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtTenVoChong;
@@ -647,7 +633,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cboTonGiao;
         private System.Windows.Forms.ComboBox cboDanToc;
-        private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -659,7 +644,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnKetThuc;
-        private System.Windows.Forms.Button btnBoQua;
         private System.Windows.Forms.Button btnChapNhan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -667,6 +651,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtNguyenQuan;
         private System.Windows.Forms.TextBox txtDKHKTT;
-
+        private System.Windows.Forms.DateTimePicker txtNgaySinh;
+        private System.Windows.Forms.DateTimePicker txtNgayCap;
+        private System.Windows.Forms.Button BtnVanTay;
+        private System.Windows.Forms.Button btnSua;
     }
 }

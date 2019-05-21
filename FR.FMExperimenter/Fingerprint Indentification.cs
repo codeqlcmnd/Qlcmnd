@@ -108,7 +108,7 @@ namespace PatternRecognition.FingerprintRecognition.Applications
             tbxResources.Text="F:\\Code Quan\\Fingerprint Identification Program\\FingerprintData";
         }
 
-        FingerprintData fingerprintdata = new FingerprintData();
+        Business fingerprintdata = new Business();
 
 
         #region private fields

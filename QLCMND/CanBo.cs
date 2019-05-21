@@ -13,6 +13,7 @@ namespace QLCMND
     public partial class CanBo : Form
     {
         Business Bll = new Business();
+        
         public CanBo()
         {
             InitializeComponent();

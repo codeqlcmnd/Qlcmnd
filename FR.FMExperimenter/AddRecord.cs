@@ -31,7 +31,7 @@ namespace PatternRecognition.FingerprintRecognition.Applications
             opfFingerprintImage.InitialDirectory = dir;
         }
 
-        FingerprintData fingerprintdata = new FingerprintData();
+        Business fingerprintdata = new Business();
 
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -73,7 +73,7 @@ namespace PatternRecognition.FingerprintRecognition.Applications
                 try
                 {
                     Features = provider.GetResource(shortFileName, repository);
-                    FingerprintData fingerprintdata = new FingerprintData();
+                Business fingerprintdata = new Business();
                     int id = Int32.Parse(tbxRecordID.Text);
                     fingerprintdata.UpdateIntoFingerprintData(id);
                     tbxStatus.Text = "Extracted";

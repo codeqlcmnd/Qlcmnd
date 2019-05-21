@@ -72,17 +72,17 @@
             this.label25 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnKetThuc = new System.Windows.Forms.Button();
-            this.btnBoQua = new System.Windows.Forms.Button();
             this.btnChapNhan = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNguyenQuan = new System.Windows.Forms.TextBox();
+            this.txtDKHKTT = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btntaoma = new System.Windows.Forms.Button();
+            this.txtToKhai = new System.Windows.Forms.TextBox();
+            this.btnSua = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -125,6 +125,7 @@
             this.rad_CapDoi.TabStop = true;
             this.rad_CapDoi.Text = "&Cấp lại/đổi";
             this.rad_CapDoi.UseVisualStyleBackColor = true;
+            this.rad_CapDoi.CheckedChanged += new System.EventHandler(this.rad_CapDoi_CheckedChanged);
             // 
             // rad_CapMoi
             // 
@@ -137,6 +138,7 @@
             this.rad_CapMoi.TabStop = true;
             this.rad_CapMoi.Text = "Cấp &mới";
             this.rad_CapMoi.UseVisualStyleBackColor = true;
+            this.rad_CapMoi.CheckedChanged += new System.EventHandler(this.rad_CapMoi_CheckedChanged);
             // 
             // txtSoCMND
             // 
@@ -184,7 +186,7 @@
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(76, 13);
             this.label36.TabIndex = 257;
-            this.label36.Text = "Nơi ĐK KHTT:";
+            this.label36.Text = "Nơi ĐK HKTT:";
             // 
             // txtNoiSinh
             // 
@@ -464,7 +466,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnKetThuc);
-            this.panel1.Controls.Add(this.btnBoQua);
+            this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnChapNhan);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -482,15 +484,6 @@
             this.btnKetThuc.Text = "&Kết thúc";
             this.btnKetThuc.UseVisualStyleBackColor = true;
             // 
-            // btnBoQua
-            // 
-            this.btnBoQua.Location = new System.Drawing.Point(275, 13);
-            this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(86, 25);
-            this.btnBoQua.TabIndex = 1;
-            this.btnBoQua.Text = "&Bỏ qua";
-            this.btnBoQua.UseVisualStyleBackColor = true;
-            // 
             // btnChapNhan
             // 
             this.btnChapNhan.Location = new System.Drawing.Point(101, 11);
@@ -499,6 +492,7 @@
             this.btnChapNhan.TabIndex = 0;
             this.btnChapNhan.Text = "Thêm";
             this.btnChapNhan.UseVisualStyleBackColor = true;
+            this.btnChapNhan.Click += new System.EventHandler(this.btnChapNhan_Click);
             // 
             // label6
             // 
@@ -536,20 +530,21 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Chọn ảnh";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // txtNguyenQuan
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(398, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtNguyenQuan.Location = new System.Drawing.Point(117, 151);
+            this.txtNguyenQuan.Name = "txtNguyenQuan";
+            this.txtNguyenQuan.Size = new System.Drawing.Size(398, 20);
+            this.txtNguyenQuan.TabIndex = 8;
             // 
-            // textBox2
+            // txtDKHKTT
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(399, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtDKHKTT.Location = new System.Drawing.Point(116, 176);
+            this.txtDKHKTT.Name = "txtDKHKTT";
+            this.txtDKHKTT.Size = new System.Drawing.Size(399, 20);
+            this.txtDKHKTT.TabIndex = 9;
             // 
             // label12
             // 
@@ -560,32 +555,45 @@
             this.label12.TabIndex = 239;
             this.label12.Text = "Mã Tờ Khai:";
             // 
-            // comboBox1
+            // btntaoma
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.btntaoma.Location = new System.Drawing.Point(451, 49);
+            this.btntaoma.Name = "btntaoma";
+            this.btntaoma.Size = new System.Drawing.Size(75, 23);
+            this.btntaoma.TabIndex = 2;
+            this.btntaoma.Text = "Tạo mã";
+            this.btntaoma.UseVisualStyleBackColor = true;
+            this.btntaoma.Click += new System.EventHandler(this.btntaoma_Click);
             // 
-            // button1
+            // txtToKhai
             // 
-            this.button1.Location = new System.Drawing.Point(451, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Tạo mã";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtToKhai.Location = new System.Drawing.Point(117, 51);
+            this.txtToKhai.Name = "txtToKhai";
+            this.txtToKhai.Size = new System.Drawing.Size(162, 20);
+            this.txtToKhai.TabIndex = 269;
+            this.txtToKhai.Text = "TK";
+            this.txtToKhai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtToKhai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtToKhai_KeyPress);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(289, 13);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(86, 25);
+            this.btnSua.TabIndex = 0;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnChapNhan_Click);
             // 
             // CMND
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 523);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtToKhai);
+            this.Controls.Add(this.btntaoma);
+            this.Controls.Add(this.txtDKHKTT);
+            this.Controls.Add(this.txtNguyenQuan);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSoCMNDCu);
@@ -636,6 +644,7 @@
             this.Name = "CMND";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CMND";
+            this.Load += new System.EventHandler(this.CMND_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -688,17 +697,16 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnKetThuc;
-        private System.Windows.Forms.Button btnBoQua;
         private System.Windows.Forms.Button btnChapNhan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNguyenQuan;
+        private System.Windows.Forms.TextBox txtDKHKTT;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-
+        private System.Windows.Forms.Button btntaoma;
+        private System.Windows.Forms.TextBox txtToKhai;
+        private System.Windows.Forms.Button btnSua;
     }
 }
